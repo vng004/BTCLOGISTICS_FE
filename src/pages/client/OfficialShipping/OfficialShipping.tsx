@@ -691,13 +691,13 @@ const OfficialShipping = () => {
                         <button
                           onClick={onReset}
                           type="reset"
-                          className="px-6 py-2 w-[130px] rounded-full text-[15px] md:text-lg border-2 border-orange-500 text-[#F84563] hover:border-[#ff7f94] hover:text-[#ff7f94]"
+                          className="px-6 py-2 w-[140px] rounded-full text-[15px] md:text-lg border-2 border-orange-500 text-[#F84563] hover:border-[#ff7f94] hover:text-[#ff7f94]"
                         >
                           Đặt lại
                         </button>
                         <button
                           type="submit"
-                          className="bg-[#F84563] text-white px-6 py-2 w-auto rounded-full border-2 hover:bg-[#ff7f94] border-[#ff7f94] text-[15px] md:text-lg flex items-center gap-x-2"
+                          className="bg-[#F84563] text-white px-6 py-2 w-[160px] rounded-full border-2 hover:bg-[#ff7f94] border-[#ff7f94] text-[15px] md:text-lg flex items-center justify-center gap-x-2"
                           disabled={isCreating || uploading}
                         >
                           {isCreating || (uploading && <LoadingOutlined />)}

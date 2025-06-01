@@ -327,7 +327,7 @@ const CreatePurchaseOrder = () => {
                             <button
                               type="button"
                               onClick={() => checkCustomerCode("create")}
-                              className="bg-[#F84563] text-white px-7 py-3 md:py-[13px]  w-[110px] md:w-[160px] rounded-r-full border hover:bg-[#ff7f94] border-[#ff7f94] md:text-lg"
+                              className="bg-[#F84563] text-white px-6 py-3 md:py-[13px]  w-[125px] md:w-[160px] rounded-r-full border hover:bg-[#ff7f94] border-[#ff7f94] md:text-lg"
                               disabled={!customerCode.trim()}
                             >
                               Kiểm tra
