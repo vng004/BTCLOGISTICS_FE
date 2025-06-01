@@ -21,7 +21,7 @@ import {
   HandCoins,
   PackagePlus,
   PackageSearch,
-  Wallet
+  Wallet,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -827,7 +827,7 @@ const CreatePurchaseOrder = () => {
       <div>
         <div className="mt-10 rounded-md flex flex-col items-center space-y-6">
           <p className="text-[#F84563] font-semibold text-2xl border-b pb-1 border-orange-500">
-            Quy trình vận chuyển hành hóa
+            Quy trình vận chuyển hàng hóa
           </p>
         </div>
         <div className="mt-10 flex justify-center md:space-x-10 lg:space-x-0 space-y-2 lg:justify-between flex-wrap items-center text-gray-600 ">
