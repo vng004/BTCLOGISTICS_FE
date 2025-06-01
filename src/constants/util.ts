@@ -66,11 +66,11 @@ export const formatPrice = (
 
   // Kiểm tra giá trị hợp lệ
   if (isNaN(numericPrice)) {
-    return "Giá không hợp lệ";
+    return "Số tiền không hợp lệ";
   }
 
   if (numericPrice < 0) {
-    return "Giá không được âm";
+    return "Số tiền không được âm";
   }
 
   // Làm tròn đến số nguyên gần nhất
@@ -94,11 +94,11 @@ export const formatPriceNumber = (
 ): string => {
   // Kiểm tra giá trị hợp lệ
   if (isNaN(price)) {
-    return "Giá không hợp lệ";
+    return "Số tiền không hợp lệ";
   }
 
   if (price < 0) {
-    return "Giá không được âm";
+    return "Số tiền không được âm";
   }
 
   // Làm tròn đến số nguyên gần nhất

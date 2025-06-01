@@ -156,8 +156,7 @@ const Dashbroad = () => {
         <p className="text-lg">
           Tổng số tiền theo mốc thời gian:
           <span className="text-[#F84563] font-medium">
-            {" "}
-            {formatPrice(data?.meta?.totalAmount)}
+            {data?.meta?.totalAmount ? formatPrice(data?.meta?.totalAmount) : '0 đ'}
           </span>
         </p>
         <ReactECharts
