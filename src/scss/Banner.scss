@@ -1,0 +1,23 @@
+.bn .ant-modal-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:where(.css-dev-only-do-not-override-1yacf91).ant-card-bordered {
+  border: none !important;
+}
+:where(.css-dev-only-do-not-override-1yacf91).ant-card .ant-card-body {
+  padding: 0;
+}
+
+:where(.css-dev-only-do-not-override-1yacf91).ant-tabs .ant-tabs-tab-btn {
+  font-size: 19px;
+}
+
+
+
+@media (max-width: 639px) {
+  :where(.css-dev-only-do-not-override-1yacf91).ant-tabs .ant-tabs-tab-btn {
+    font-size: 14px;
+  }
+}

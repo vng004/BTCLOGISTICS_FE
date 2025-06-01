@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #ff4667;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-password {
+  border-color: #d9d9d9; /* Màu viền bình thường */
+  box-shadow: none; /* Tắt shadow */
+  outline: none; /* Tắt outline */
+}
+.ant-input-affix-wrapper > input.ant-input,
+.ant-input-affix-wrapper > textarea.ant-input {
+  font-size: 16px;
+}
+
+.ant-input:focus,
+.ant-input:hover,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper:hover,
+.ant-input-password:focus,
+.ant-input-password:hover {
+  border-color: #d9d9d9 !important; /* Giữ nguyên màu viền khi hover/focus */
+  box-shadow: none !important; /* Tắt hiệu ứng box-shadow */
+  outline: none !important; /* Tắt outline */
+}
+
+/* Tùy chỉnh cho các input với status như success, warning, error */
+.ant-input-status-success:not(.ant-input-disabled):focus,
+.ant-input-status-warning:not(.ant-input-disabled):focus,
+.ant-input-status-error:not(.ant-input-disabled):focus {
+  border-color: #d9d9d9 !important; /* Màu viền khi có trạng thái */
+  box-shadow: none !important;
+}
+
+/* Để làm việc với các thành phần input khác, như TextArea */
+.ant-input-textarea {
+  border-color: #d9d9d9;
+  box-shadow: none;
+  outline: none;
+}
+
+.ant-input-textarea:focus,
+.ant-input-textarea:hover {
+  border-color: #d9d9d9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.custom-button {
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 17px;
+  background-image: linear-gradient(to right, #f37441, var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.custom-button:hover {
+  background-image: linear-gradient(to right, var(--main-color), #f37441);
+}
+
+/* tabs */
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #ff4667 !important;
+}
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: #ff4667 !important; /* Hover text color */
+}
+.ant-tabs .ant-tabs-ink-bar {
+  background: #ff4667 !important;
+}
+
+/* Tùy chỉnh chiều rộng và chiều cao của thanh cuộn */
+::-webkit-scrollbar {
+  width: 10px; /* Chiều rộng cho thanh cuộn dọc */
+}
+
+/* Màu nền của thanh cuộn (track) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền của track */
+  border-radius: 10px; /* Bo góc cho track */
+}
+
+/* Tùy chỉnh phần thanh trượt (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #d8d8d8; /* Màu của thanh trượt */
+  border-radius: 10px; /* Bo góc cho thanh trượt */
+}
+
+.custom-cancel-btn {
+  background-color: #fff !important;
+  color: #ff4667 !important;
+  border-color: #e5e0e3 !important; /* Thiết lập viền mặc định */
+}
+
+.custom-cancel-btn:hover {
+  background-color: #fff !important;
+  color: #ff4667 !important;
+  border-color: #ff4667 !important; /* Bỏ viền xanh khi hover */
+}
+
+.img .ant-upload-wrapper .ant-upload-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img .ant-upload-list-item-container{
+  margin-right: 6px;
+}

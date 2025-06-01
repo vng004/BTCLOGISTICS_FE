@@ -1,0 +1,40 @@
+/* Loại bỏ border-bottom từ menu */
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+/* Loại bỏ border-bottom cho tất cả các item của menu */
+.ant-menu-light .ant-menu-item,
+.ant-menu-light .ant-menu-item-selected,
+.ant-menu-light .ant-menu-item:hover {
+  border-bottom: none !important; /* Loại bỏ border-bottom từ Ant Design */
+}
+
+/* Xử lý khi item đang được chọn */
+.ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-light > .ant-menu.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-light.ant-menu-horizontal > .ant-menu-submenu-selected,
+.ant-menu-light > .ant-menu.ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #ff4667 !important; /* Giữ màu văn bản khi được chọn */
+  background-color: transparent; /* Làm nền trong suốt */
+}
+
+/* Màu hover cho các item */
+.ant-menu-light .ant-menu-item:hover {
+  color: #ff4667 !important; /* Thay đổi màu hover */
+  border-bottom: none !important; /* Đảm bảo không có border khi hover */
+}
+
+/* Đảm bảo không có border cho item đang hover hoặc đã chọn */
+.ant-menu-light .ant-menu-item-selected::after,
+.ant-menu-light .ant-menu-item:hover::after,
+.ant-menu-light .ant-menu-item::after {
+  border-bottom: none !important; /* Loại bỏ border-bottom từ Ant Design */
+  content: none !important; /* Đảm bảo không có pseudo-element */
+}
+
+/* Nếu vẫn còn border-bottom ở các trạng thái khác */
+.ant-menu-light .ant-menu-item-selected,
+.ant-menu-light .ant-menu-item {
+  border-bottom: none !important; /* Loại bỏ border-bottom từ Ant Design */
+}

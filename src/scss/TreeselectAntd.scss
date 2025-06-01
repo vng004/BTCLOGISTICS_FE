@@ -1,0 +1,37 @@
+/* Scoped CSS for TreeSelect on this specific page */
+.custom-tree-select .ant-select-selector {
+  background-color: #ff4667 !important; /* Custom background color */
+}
+
+/* Customize placeholder text color */
+.custom-tree-select .ant-select-selection-placeholder {
+  color: #fff !important; /* Placeholder text color */
+}
+
+/* Customize dropdown menu styling */
+.custom-tree-select .ant-select-dropdown {
+  background-color: #fff !important; /* Dropdown background color */
+  border-radius: 4px;
+}
+
+/* Style options within dropdown */
+.custom-tree-select .ant-select-tree {
+  color: #fff !important;
+}
+
+.custom-tree-select .ant-select-arrow {
+  color: #fff !important;
+  font-size: 16px;
+}
+.ant-select-selection-placeholder {
+  font-size: 16px;
+}
+.custom-tree-select .ant-select-selection-item {
+  font-size: 16px;
+  color: #fff;
+}
+
+.anticon-close-circle {
+  font-size: 15px;
+  background-color: transparent !important;
+}

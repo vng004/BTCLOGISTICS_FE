@@ -1,0 +1,21 @@
+.ant-checkbox-wrapper:hover .ant-checkbox-inner {
+  border-color: #ff4667 !important; /* Đổi viền thành đỏ */
+  background-color: transparent !important; /* Bỏ nền màu xanh */
+}
+.ant-checkbox .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+}
+/* Màu nền và viền khi checkbox được chọn */
+.ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+  border-color: #ff4667; /* Đổi viền thành đỏ khi checked */
+  background: #ff4667; /* Đổi nền thành đỏ khi checked */
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ff4667 !important; /* Giữ nền đỏ khi hover */
+}
+.ant-checkbox + span {
+  font-size: 17px;
+  padding-left: 10px;
+}
