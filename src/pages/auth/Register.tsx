@@ -2,35 +2,29 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { Form, Input, message } from "antd";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getTitleTab, logo_admin, logo_home } from "../../constants/client";
-import { useLoginMutation } from "../../redux/slices/authApiSlice";
-import { setCredentials } from "../../redux/slices/authSlice";
+import { useCreateAdminMutation } from "../../redux/slices/authApiSlice";
 
-const LoginToAdmin = () => {
+const Register = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [login, { isLoading }] = useLoginMutation();
+  const [register, { isLoading }] = useCreateAdminMutation();
 
   const onFinish = async (values: { userName: string; password: string }) => {
     try {
-      const response = await login(values).unwrap();
-      dispatch(setCredentials({ user: response.user, token: response.token }));
-      localStorage.setItem("token", response.token);
-      localStorage.setItem("user", JSON.stringify(response.user));
-      message.success("Đăng nhập thành công!");
-      navigate("/admin");
+      await register(values).unwrap();
+      message.success("Đăng ký thành công!");
+      navigate("/VNG-BTCLOGISTICS-dang-nhap-trang-quan-tri");
     } catch (error: any) {
-      message.error(error?.data?.message || "Đăng nhập thất bại!");
+      message.error(error?.data?.message || "Đăng ký thất bại!");
     }
   };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center z-10">
       <Helmet>
-        <title>{getTitleTab("Đăng nhập quản trị viên")}</title>
+        <title>{getTitleTab("Đăng kí quản trị viên")}</title>
       </Helmet>
       <div className="bg-gray-100 absolute top-0 left-0 bg-gradient-to-b from-[#001529] via-[#001529] to-gray-100 bottom-0 leading-5 h-full w-full overflow-hidden"></div>
       <div className="relative min-h-screen flex justify-center gap-36 items-start pt-34 z-10">
@@ -39,11 +33,11 @@ const LoginToAdmin = () => {
             Chào mừng Quản Trị Viên!
           </h1>
           <p className="pr-3 text-lg">
-            Đăng nhập tài khoản để vào trang quản trị của <b>BTC</b>
+            Đăng ký tài khoản để vào trang quản trị của <b>BTC</b>
           </p>
-           <div className="flex justify-center mt-6">
-                      <img src={logo_home} alt="logo" className="w-[180px]" />
-                    </div>
+          <div className="flex justify-center mt-6">
+            <img src={logo_home} alt="logo" className="w-[180px]" />
+          </div>
         </div>
         <Form
           form={form}
@@ -52,7 +46,7 @@ const LoginToAdmin = () => {
         >
           <div className="flex flex-col items-center justify-center text-[24px] text-gray-800 h-full">
             <img src={logo_admin} alt="logo" className="w-[80px]" />
-            <p>Đăng nhập vào trang quản trị</p>
+            <p>Đăng kí vào trang quản trị</p>
           </div>
 
           <Form.Item
@@ -106,4 +100,4 @@ const LoginToAdmin = () => {
   );
 };
 
-export default LoginToAdmin;
+export default Register;

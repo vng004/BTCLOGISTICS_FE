@@ -13,10 +13,7 @@ export const orderCustomer2 = "/assets/images/client/Images/unnamed.png";
 export const parcelNull = "/assets/images/client/Images/parcelNull.jpg";
 export const qrWc = "/assets/images/client/Images/qrWC.jpg";
 export const VNG = "/assets/images/client/Images/VNG.png";
-export const logo1 = "/assets/images/client/Images/logo1.png";
-export const logo2 = "/assets/images/client/Images/logo2.png";
 export const logo_admin = "/assets/images/client/Logo/logo_admin.png";
-export const logo = "/assets/images/client/Logo/logo.png";
 export const logo_home = "/assets/images/client/Logo/logo_home.png";
 
 export const target = "/assets/images/client/Images/target.jpg";

@@ -31,15 +31,14 @@ import OfficialShipping from "./pages/client/OfficialShipping/OfficialShipping";
 import OfficialGood from "./pages/admin/OfficialGood/OfficialGood";
 import DetailOfficialGood from "./pages/admin/OfficialGood/DetailOfficialGood";
 import Dashbroad from "./pages/admin/Dashboard/Dashbroad";
+import Register from "./pages/auth/Register";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/admin" element={<LayoutAdmin />}>
-
           <Route index element={<Dashbroad />} />
-
 
           <Route path="/admin/parcel" element={<ListParcels />} />
           <Route path="/admin/parcel/:id" element={<DetailParcel />} />
@@ -49,9 +48,9 @@ function App() {
           <Route path="/admin/customer-add" element={<FormCustomer />} />
 
           <Route path="/admin/exchange-rate" element={<ExchangeRate />} />
-          
+
           <Route path="/admin/auth" element={<UserManagement />} />
-          
+
           <Route path="/admin/banner" element={<BannerManagement />} />
 
           <Route path="/admin/order-succes" element={<OrderSucces />} />
@@ -67,14 +66,20 @@ function App() {
           />
 
           <Route path="/admin/official-good" element={<OfficialGood />} />
-          <Route path="/admin/official-good/:id" element={<DetailOfficialGood />} />
+          <Route
+            path="/admin/official-good/:id"
+            element={<DetailOfficialGood />}
+          />
         </Route>
         <Route path="/" element={<LayoutClient />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/kien-hang" element={<Parcel />} />
           <Route path="/lien-he-dat-hang" element={<CreatePurchaseOrder />} />
           <Route path="/gioi-thieu" element={<IntroduceBTC />} />
-          <Route path="//hang-van-chuyen-chinh-ngach" element={<OfficialShipping />} />
+          <Route
+            path="//hang-van-chuyen-chinh-ngach"
+            element={<OfficialShipping />}
+          />
 
           <Route path="/chinh-sach-doi-tra" element={<ReturnPolicyPage />} />
           <Route path="/chinh-sach-van-chuyen" element={<ShippingPolicy />} />
@@ -82,7 +87,14 @@ function App() {
           <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicy />} />
           <Route path="/nhung-cau-hoi-thuong-gap" element={<FAQ />} />
         </Route>
-        <Route path="login" element={<LoginToAdmin />} />
+        <Route
+          path="/VNG-BTCLOGISTICS-dang-nhap-trang-quan-tri"
+          element={<LoginToAdmin />}
+        />
+        <Route
+          path="/VNG-BTCLOGISTICS-dang-ky-tai-khoan-quan-tri"
+          element={<Register />}
+        />
       </Routes>
     </>
   );
