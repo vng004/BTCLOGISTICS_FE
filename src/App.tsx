@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "../src/scss/App.scss";
 import "../src/scss/CheckBox.scss";
 import "../src/scss/PaginationAntd.scss";
@@ -95,6 +95,7 @@ function App() {
           path="/VNG-BTCLOGISTICS-dang-ky-tai-khoan-quan-tri"
           element={<Register />}
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );
