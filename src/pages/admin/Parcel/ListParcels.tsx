@@ -618,65 +618,61 @@ const ListParcels = () => {
             >
               <PackagePlus size={18} /> Nhập kho TQ
             </div>
-          </div>
-        )}
-      </div>
-      <div className="p-4 bg-white rounded-3xl shadow-lg space-y-5">
-        <div className="flex items-center justify-between ">
-          <div className="flex items-center gap-x-6">
-           <Input
-              placeholder="Lọc theo mã bao, mã vận đơn"
-              value={keyword}
-              onChange={handleSearchChange}
-              className="px-2 h-[44px] w-60  text-[16px]"
-              allowClear
-            />
-            <Input
-              placeholder="Lọc theo mã khách hàng"
-              value={customerCode}
-              onChange={handleCustomerCodeChange}
-              className="px-2 h-[44px] w-52 text-[16px]"
-              allowClear
-            />
-            <TreeSelect
-              className="w-50 px-2 h-[44px]  text-[16px]"
-              dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
-              onChange={handleStatus}
-              value={status}
-              placeholder="Lọc theo trạng thái"
-              allowClear
-            >
-              <TreeSelect.TreeNode value={0} title="Lưu kho TQ" />
-              <TreeSelect.TreeNode value={1} title="Luân chuyển về VN" />
-              <TreeSelect.TreeNode value={2} title="Lưu kho VN" />
-              <TreeSelect.TreeNode value={3} title="Đã giao hàng" />
-            </TreeSelect>
-          </div>
-          <div className="flex items-center gap-x-10">
-            <div className="text-[14px] space-x-2 flex items-center">
-              <DatePicker
-                format="DD/MM/YYYY"
-                value={startDate ? moment(startDate) : ""}
-                onChange={handleStartDateChange}
-                className="px-2 h-[44px]"
-                placeholder="Ngày bắt đầu"
-              />
-              <div>-</div>
-              <DatePicker
-                format="DD/MM/YYYY"
-                value={endDate ? moment(endDate) : ""}
-                onChange={handleEndDateChange}
-                className="px-2 h-[44px]"
-                placeholder="Ngày Kết thúc"
-              />
-            </div>
             <div
-              className="border-2 mt-4 md:mt-0 lg:mt-0 w-[140px] flex justify-center items-center border-orange-500 h-[44px] px-5 rounded-[50px] bg-[#F84563] text-white hover:bg-white hover:border-orange-500 hover:text-[#F84563] gap-3 hover:shadow-md cursor-pointer"
+              className="border-2 mt-4 md:mt-0 lg:mt-0 w-[140px] flex justify-center items-center border-orange-500 h-[44px] px-5 rounded-[50px] bg-[#F84563] text-white hover:bg-[#fa758b] gap-3 hover:shadow-md cursor-pointer"
               onClick={handleParcelsForOrderSucces}
             >
               {addOrder ? <LoadingOutlined /> : <FileCheck2 size={18} />}
               Xuất kho
             </div>
+          </div>
+        )}
+      </div>
+      <div className="p-4 bg-white rounded-3xl shadow-lg space-y-5">
+        <div className="flex items-center gap-x-6 justify-between">
+          <Input
+            placeholder="Lọc theo mã bao, mã vận đơn"
+            value={keyword}
+            onChange={handleSearchChange}
+            className="px-2 h-[44px] w-[246px] text-[16px]"
+            allowClear
+          />
+          <Input
+            placeholder="Lọc theo mã khách hàng"
+            value={customerCode}
+            onChange={handleCustomerCodeChange}
+            className="px-2 h-[44px] w-52 text-[16px]"
+            allowClear
+          />
+          <TreeSelect
+            className="w-50 px-2 h-[44px]  text-[16px]"
+            dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
+            onChange={handleStatus}
+            value={status}
+            placeholder="Lọc theo trạng thái"
+            allowClear
+          >
+            <TreeSelect.TreeNode value={0} title="Lưu kho TQ" />
+            <TreeSelect.TreeNode value={1} title="Luân chuyển về VN" />
+            <TreeSelect.TreeNode value={2} title="Lưu kho VN" />
+            <TreeSelect.TreeNode value={3} title="Đã giao hàng" />
+          </TreeSelect>
+          <div className="text-[14px] space-x-2 flex items-center">
+            <DatePicker
+              format="DD/MM/YYYY"
+              value={startDate ? moment(startDate) : ""}
+              onChange={handleStartDateChange}
+              className="px-2 h-[44px] border border-orange-500"
+              placeholder="Ngày bắt đầu"
+            />
+            <div className="text-orange-500">-</div>
+            <DatePicker
+              format="DD/MM/YYYY"
+              value={endDate ? moment(endDate) : ""}
+              onChange={handleEndDateChange}
+              className="px-2 h-[44px] border border-orange-500"
+              placeholder="Ngày Kết thúc"
+            />
           </div>
         </div>
         <Table
