@@ -111,7 +111,7 @@ const SidebarAdmin = () => {
 
   return (
     <Sider
-      width={230}
+      width={215}
       className="bg-[#001529]"
       style={{
         overflow: "auto",

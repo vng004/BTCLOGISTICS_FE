@@ -594,26 +594,26 @@ const ListParcels = () => {
       <Helmet>
         <title>{getTitleTab("Quản lí kiện hàng")}</title>
       </Helmet>
-      <div className="flex justify-between items-center flex-col md:flex-row lg:flex-row mb-3 bg-white rounded-[50px] shadow-xl p-4">
+      <div className="flex flex-wrap space-y-2 justify-between items-center flex-col md:flex-row  mb-3 bg-white rounded-[50px] shadow-xl p-4">
         <p className="font-title text-xl">Danh sách kiện hàng</p>
         {admin ? (
           ""
         ) : (
           <div className="flex justify-between items-center gap-x-2 text-[16px]">
             <div
-              className="border-2 mt-4 md:mt-0 lg:mt-0 w-[240px] flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
+              className="border-2 mt-4 md:mt-0 lg:mt-0 w-auto flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
               onClick={showModalInspection}
             >
               <ListTodo size={18} /> Thay đổi trạng thái HQ
             </div>
             <div
-              className="border-2 mt-4 md:mt-0 lg:mt-0 w-[210px] flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
+              className="border-2 mt-4 md:mt-0 lg:mt-0 w-auto flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
               onClick={showModalUpdate}
             >
               <FileSliders size={18} /> Cập nhật trạng thái
             </div>
             <div
-              className="border-2 mt-4 md:mt-0 lg:mt-0 w-[170px] flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
+              className="border-2 mt-4 md:mt-0 lg:mt-0 w-auto flex justify-center items-center border-orange-500 py-2 px-5 rounded-[50px] hover:bg-[#F84563] text-[#F84563] bg-white hover:border-orange-500 hover:text-white gap-3 cursor-pointer hover:shadow-md"
               onClick={showModalAdd}
             >
               <PackagePlus size={18} /> Nhập kho TQ

@@ -98,153 +98,152 @@ const OfficialGood = () => {
       displayErrorMessage(error);
     }
   };
-const columns = [
-  {
-    title: "STT",
-    key: "key",
-    dataIndex: "key",
-    render: (_: any, __: any, index: number) => (
-      (+data?.meta?.page - 1) * (data?.meta?.perPage || perPage) + index + 1
-    ),
-    width: 50,
-    align: "center" as const,
-  },
-  {
-    title: "Tên KH",
-    dataIndex: "fullName",
-    key: "fullName",
-    align: "center" as const,
-    width: 100,
-  },
-  {
-    title: "Tên sản phẩm",
-    dataIndex: "productName",
-    key: "productName",
-    align: "center" as const,
-    width: 150,
-  },
-  {
-    title: "Ảnh",
-    dataIndex: "productImage",
-    key: "productImage",
-    render: (productImage: string[]) => (
-      <Image className="w-24" src={productImage[0] || ""} /> // Sửa w-22 thành w-24
-    ),
-    align: "center" as const,
-    width: 100,
-  },
-  {
-    title: "Sl kiện",
-    dataIndex: "packagingDetails",
-    key: "packagingDetails",
-    align: "center" as const,
-    render: (_: TOfficialGood["packagingDetails"], record: TOfficialGood) => (
-      <div>{record.packagingDetails?.packageCount ?? "N/A"}</div>
-    ),
-  },
-  {
-    title: "HQ kiểm hóa",
-    key: "inspection",
-    dataIndex: "inspection",
-    width: 100,
-    align: "center" as const,
-    render: (inspection: boolean, record: TOfficialGood) => (
-      <Checkbox
-        onChange={(e) => handleInspectionChange(record._id, e.target.checked)}
-        checked={inspection}
-        disabled={isUpdating}
-      />
-    ),
-  },
-  {
-    title: "Thời gian tạo đơn",
-    dataIndex: "createdAt",
-    key: "createdAt",
-    render: (createdAt: string) => <div>{formatDateDay(createdAt)}</div>,
-    align: "center" as const,
-    width: 150,
-  },
-  {
-    title: "Trạng thái",
-    dataIndex: "status",
-    key: "status",
-    width: 130,
-    render: (status: number, record: TOfficialGood) => {
-      return record.inspection ? (
-        <Tag
-          className="text-sm font-semibold py-2 px-2 min-w-[130px] text-center ml-2"
-          color="error"
-        >
-          Hải quan đang kiểm hóa hàng
-        </Tag>
-      ) : (
-        <Tag
-          className="text-sm font-semibold py-2 px-2 min-w-[130px] text-center ml-2"
-          color={
-            status === 0
-              ? "orange"
-              : status === 1
-              ? "blue"
-              : status === 2
-              ? "purple"
-              : status === 3
-              ? "cyan"
-              : status === 4
-              ? "geekblue"
-              : status === 5
-              ? "gold"
-              : status === 6
-              ? "green"
-              : status === 7
-              ? "lime"
-              : "default"
-          }
-        >
-          {status === 0
-            ? "Tiếp nhận đơn hàng"
-            : status === 1
-            ? "Xử lý và báo giá"
-            : status === 2
-            ? "Khách đã duyệt"
-            : status === 3
-            ? "Đã duyệt và lên đơn"
-            : status === 4
-            ? "Kho TQ nhận đơn"
-            : status === 5
-            ? "Đang vận chuyển về VN"
-            : status === 6
-            ? "Hàng về kho VN"
-            : status === 7
-            ? "Giao hàng và thanh toán"
-            : "Đơn hàng đã hoàn thành"}
-        </Tag>
-      );
+  const columns = [
+    {
+      title: "STT",
+      key: "key",
+      dataIndex: "key",
+      render: (_: any, __: any, index: number) =>
+        (+data?.meta?.page - 1) * (data?.meta?.perPage || perPage) + index + 1,
+      width: 50,
+      align: "center" as const,
     },
-    align: "center" as const,
-  },
-  {
-    title: "Chức năng",
-    render: (item: TOfficialGood) => (
-      <div className="flex items-center justify-center">
-        <Link to={`/admin/official-good/${item._id}`}>
-          <Button type="primary">
-            <Eye size={20} />
+    {
+      title: "Tên KH",
+      dataIndex: "fullName",
+      key: "fullName",
+      align: "center" as const,
+      width: 100,
+    },
+    {
+      title: "Tên sản phẩm",
+      dataIndex: "productName",
+      key: "productName",
+      align: "center" as const,
+      width: 150,
+    },
+    {
+      title: "Ảnh",
+      dataIndex: "productImage",
+      key: "productImage",
+      render: (productImage: string[]) => (
+        <Image className="w-24" src={productImage[0] || ""} /> // Sửa w-22 thành w-24
+      ),
+      align: "center" as const,
+      width: 100,
+    },
+    {
+      title: "Sl kiện",
+      dataIndex: "packagingDetails",
+      key: "packagingDetails",
+      align: "center" as const,
+      render: (_: TOfficialGood["packagingDetails"], record: TOfficialGood) => (
+        <div>{record.packagingDetails?.packageCount ?? "N/A"}</div>
+      ),
+    },
+    {
+      title: "HQ kiểm hóa",
+      key: "inspection",
+      dataIndex: "inspection",
+      width: 100,
+      align: "center" as const,
+      render: (inspection: boolean, record: TOfficialGood) => (
+        <Checkbox
+          onChange={(e) => handleInspectionChange(record._id, e.target.checked)}
+          checked={inspection}
+          disabled={isUpdating}
+        />
+      ),
+    },
+    {
+      title: "Thời gian tạo đơn",
+      dataIndex: "createdAt",
+      key: "createdAt",
+      render: (createdAt: string) => <div>{formatDateDay(createdAt)}</div>,
+      align: "center" as const,
+      width: 150,
+    },
+    {
+      title: "Trạng thái",
+      dataIndex: "status",
+      key: "status",
+      width: 130,
+      render: (status: number, record: TOfficialGood) => {
+        return record.inspection ? (
+          <Tag
+            className="text-sm font-semibold py-2 px-2 min-w-[130px] text-center ml-2"
+            color="error"
+          >
+            Hải quan đang kiểm hóa hàng
+          </Tag>
+        ) : (
+          <Tag
+            className="text-sm font-semibold py-2 px-2 min-w-[130px] text-center ml-2"
+            color={
+              status === 0
+                ? "orange"
+                : status === 1
+                ? "blue"
+                : status === 2
+                ? "purple"
+                : status === 3
+                ? "cyan"
+                : status === 4
+                ? "geekblue"
+                : status === 5
+                ? "gold"
+                : status === 6
+                ? "green"
+                : status === 7
+                ? "lime"
+                : "default"
+            }
+          >
+            {status === 0
+              ? "Tiếp nhận đơn hàng"
+              : status === 1
+              ? "Xử lý và báo giá"
+              : status === 2
+              ? "Khách đã duyệt"
+              : status === 3
+              ? "Đã duyệt và lên đơn"
+              : status === 4
+              ? "Kho TQ nhận đơn"
+              : status === 5
+              ? "Đang vận chuyển về VN"
+              : status === 6
+              ? "Hàng về kho VN"
+              : status === 7
+              ? "Giao hàng và thanh toán"
+              : "Đơn hàng đã hoàn thành"}
+          </Tag>
+        );
+      },
+      align: "center" as const,
+    },
+    {
+      title: "Chức năng",
+      render: (item: TOfficialGood) => (
+        <div className="flex items-center justify-center">
+          <Link to={`/admin/official-good/${item._id}`}>
+            <Button type="primary">
+              <Eye size={20} />
+            </Button>
+          </Link>
+          <Button
+            type="primary"
+            danger
+            className="ml-2"
+            onClick={() => handleRemove(item._id)}
+          >
+            <Trash2 size={20} />
           </Button>
-        </Link>
-        <Button
-          type="primary"
-          danger
-          className="ml-2"
-          onClick={() => handleRemove(item._id)}
-        >
-          <Trash2 size={20} />
-        </Button>
-      </div>
-    ),
-    width: 100,
-    align: "center" as const,
-  },
-];
+        </div>
+      ),
+      width: 100,
+      align: "center" as const,
+    },
+  ];
   const handlePageChange = (page: number) => {
     setPage(page);
     smoothScrollToTop();
@@ -267,7 +266,7 @@ const columns = [
       <Helmet>
         <title>{getTitleTab("Quản lí đơn hàng nhận báo giá")}</title>
       </Helmet>
-      <div className="flex gap-x-10 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
+      <div className="flex flex-wrap gap-x-6 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
         <div className="flex items-center gap-x-6">
           <p className="text-xl">Quản lý đơn hàng nhận báo giá</p>
         </div>

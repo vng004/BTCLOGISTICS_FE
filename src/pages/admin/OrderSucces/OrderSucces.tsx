@@ -162,7 +162,7 @@ const OrderSucces = () => {
   };
   return (
     <div>
-      <div className="flex gap-x-10 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
+      <div className="flex flex-wrap gap-x-6 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
         <div className="flex items-center gap-x-6">
           <p className="text-xl">Quản lý kiện hàng xuất kho</p>
         </div>

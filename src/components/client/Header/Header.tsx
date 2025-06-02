@@ -124,7 +124,7 @@ const Header = () => {
                     label: <Link to="/">Trang Chủ</Link>,
                   },
                   {
-                    key: "/xe-dap-the-thao",
+                    key: "/lien-he-dat-hang",
                     icon: <PackagePlus size={18} />,
                     label: <Link to="/lien-he-dat-hang">Đặt hàng hộ</Link>,
                   },

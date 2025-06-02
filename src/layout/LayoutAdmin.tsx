@@ -61,7 +61,7 @@ const LayoutAdmin = () => {
         <SidebarAdmin />
         <Layout
           style={{
-            marginLeft: 230,
+            marginLeft: 210,
             transition: "margin-left 0.2s",
           }}
         >

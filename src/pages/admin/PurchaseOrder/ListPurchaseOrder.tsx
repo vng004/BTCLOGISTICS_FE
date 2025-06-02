@@ -242,7 +242,7 @@ const ListPurchaseOrder = () => {
       <Helmet>
         <title>{getTitleTab("Quản lí đơn hàng đặt hộ")}</title>
       </Helmet>
-      <div className="flex gap-x-10 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
+      <div className="flex flex-wrap gap-x-6 items-center flex-col md:flex-row lg:flex-row mb-6 bg-white rounded-[50px] shadow-xl p-4">
         <div className="flex items-center gap-x-6">
           <p className="text-xl">Quản lý đơn hàng đặt hộ</p>
         </div>
