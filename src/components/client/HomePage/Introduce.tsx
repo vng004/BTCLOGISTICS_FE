@@ -7,7 +7,7 @@ import { easeInOut, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { imageCargo } from "../../../constants/client";
 
-import { Form, Input } from "antd";
+import { Input } from "antd";
 
 export const Introduce = () => {
   const [count, setCount] = useState(100);
