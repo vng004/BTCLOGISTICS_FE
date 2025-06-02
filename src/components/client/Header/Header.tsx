@@ -144,25 +144,25 @@ const Header = () => {
                   },
                 ]}
               />
-              <div className="absolute bottom-4 md:bottom-16 text-[16px] md:text-lg space-y-3">
+              <div className="absolute bottom-4 md:bottom-16 text-[15px] md:text-lg space-y-3">
                 <p className=" font-semibold pb-2 text-lg">Hỗ trợ</p>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   <Phone size={18} className="text-green-500" />
                   <p>Hotline:</p>
                   <Link
-                    className=" font-semibold text-lg"
+                    className=" font-semibold "
                     to="tel:0889296929
 "
                   >
                     (+84) 889296929
                   </Link>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1">
                   <Mail size={18} className="text-red-500" />
                   <p>Email liên hệ: </p>
 
                   <a
-                    className=" font-semibold text-lg"
+                    className=" font-semibold "
                     href="mailto:Adlogistics.btc@gmail.com"
                   >
                     Adlogistics.btc@gmail.com
@@ -181,7 +181,7 @@ const Header = () => {
           <form
             action="/kien-hang"
             onSubmit={handleSubmit}
-            className="flex border border-orange-500 justify-between bg-white p-2 lg:mb-0 rounded-full "
+            className="flex border border-orange-500 justify-between bg-white p-1 md:p-2 lg:mb-0 rounded-full "
           >
             <SearchOutlined className="text-[#F84563] mr-[10px] pl-[10px]" />
             <Input
@@ -189,13 +189,13 @@ const Header = () => {
               name="keyword"
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              className="bg-transparent border-none w-[250px] md:w-[440px] focus:border-transparent lg:mr-2 placeholder:text-[#706f74] 
+              className="bg-transparent border-none w-[230px] md:w-[440px] focus:border-transparent lg:mr-2 placeholder:text-[#706f74] 
                     text-[#706f74] "
               placeholder="Tra cứu kiện hàng"
             />
             <button
               type="submit"
-              className="bg-[#F84563] rounded-full w-[30px] hover:bg-[#f9817b]"
+              className="bg-[#F84563] rounded-full py-2 px-3 hover:bg-[#f9817b]"
             >
               <ArrowRightOutlined className="text-md text-white" />
             </button>

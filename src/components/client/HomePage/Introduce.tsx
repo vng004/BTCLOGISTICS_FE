@@ -7,7 +7,7 @@ import { easeInOut, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { imageCargo } from "../../../constants/client";
 
-import { Input } from "antd";
+import { Form, Input } from "antd";
 
 export const Introduce = () => {
   const [count, setCount] = useState(100);
@@ -67,7 +67,7 @@ export const Introduce = () => {
             <form
               onSubmit={handleSubmit}
               action="/kien-hang"
-              className="flex justify-between bg-white p-3 mb-6 rounded-full"
+              className="flex justify-between bg-white p-2 md:p-3 mb-6 rounded-full"
             >
               <SearchOutlined
                 style={{
@@ -81,14 +81,14 @@ export const Introduce = () => {
                 type="text"
                 name="keyword"
                 onChange={(e) => setKeyword(e.target.value)}
-                className="bg-transparent border-none w-[270px]  md:w-[300px] lg:w-[520px] focus:border-transparent mr-2 placeholder:text-gray-400 text-lg 
+                className="bg-transparent border-none w-[270px] md:w-[300px] lg:w-[520px] focus:border-transparent placeholder:text-gray-400 text-lg 
                     text-[#706f74] hover:bg-transparent focus:bg-transparent"
                 placeholder="Tra cứu kiện hàng"
               />
 
               <button
                 type="submit"
-                className="bg-[#F84563] rounded-full w-[40px] md:w-[38px] lg:w-[46px] lg:h-[44px] hover:bg-[#f9817b] cursor-pointer"
+                className="bg-[#F84563] rounded-full py-3 px-[15px] hover:bg-[#f9817b] cursor-pointer"
               >
                 <ArrowRightOutlined className="text-white text-xl" />
               </button>

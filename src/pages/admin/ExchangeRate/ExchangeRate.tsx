@@ -1,3 +1,4 @@
+import { LoadingOutlined } from "@ant-design/icons";
 import { Form, Input, message } from "antd";
 import { FilePenLine, PackagePlus } from "lucide-react";
 import { useEffect } from "react";
@@ -9,14 +10,12 @@ import {
   useGetExchangeRateQuery,
   useUpdateExchangeRateMutation,
 } from "../../../redux/slices/exchangeRateApiSlice";
-import { LoadingOutlined } from "@ant-design/icons";
 
 const ExchangeRate = () => {
   const [form] = Form.useForm();
   const {
     data,
     isLoading: isFetching,
-    error: fetchError,
   } = useGetExchangeRateQuery();
   const [addExchangeRate, { isLoading: isAdding }] =
     useAddExchangeRateMutation();
@@ -87,12 +86,8 @@ const ExchangeRate = () => {
         <div className="bg-white rounded-3xl hover:shadow-md shadow-xl p-10">
           {isFetching ? (
             <div className="flex justify-center">
-              <LoadingOutlined  />
+              <LoadingOutlined />
             </div>
-          ) : fetchError ? (
-            <p className="text-red-500">
-              Lỗi khi lấy dữ liệu tỷ giá: {fetchError.toString()}
-            </p>
           ) : (
             <>
               <Form.Item

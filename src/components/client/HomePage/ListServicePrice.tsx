@@ -18,7 +18,7 @@ const ListServicePrice = () => {
       ref={topRef}
       className="mt-20 bg-[url('/assets/images/client/Images/sec-bg-02.png')] bg-cover bg-center min-h-[80vh] md:min-h-fit max-w-[768px] md:max-w-[1024px]  lg:max-w-[1280px] mx-auto p-3  border border-orange-500 rounded-md shadow-xl"
     >
-      <div className="w-full max-w-full md:max-w-[920px]  mx-auto p-2  text-lg">
+      <div className="max-w-[500px] md:max-w-[920px]  mx-auto p-2  text-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6 pt-5">
           Tỷ Giá Ngoại Tệ
         </h2>
@@ -76,7 +76,7 @@ const ListServicePrice = () => {
           </div>
         ) : (
           <p className="text-center text-gray-500">
-            Không có dữ liệu tỷ giá để hiển thị.
+            Tỷ giá chưa được cập nhật để hiển thị.
           </p>
         )}
       </div>
