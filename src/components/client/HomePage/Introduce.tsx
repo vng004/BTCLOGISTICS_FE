@@ -94,7 +94,7 @@ export const Introduce = () => {
               </button>
             </form>
             <p className="text-[16px] text-[#685f78] lg:text-[20px] mb-6 lg:mb-[10px]">
-              Được hơn 10 nghìn khách hàng tin dùng trên toàn quốc từ năm 2024
+              Được hơn 10 nghìn khách hàng tin dùng trên toàn quốc
             </p>
 
             <div className="flex">
