@@ -62,6 +62,7 @@ const ListParcels = () => {
   const [perPage] = useState(6);
   const [selectedParcel, setSelectedParcel] = useState<string[]>([]);
   const [status, setStatus] = useState<number | undefined>(undefined);
+  const [activeTab, setActiveTab] = useState("1");
   const { data, isLoading } = useGetParcelsQuery({
     keyword,
     startDate: startDate,
@@ -454,8 +455,6 @@ const ListParcels = () => {
   };
 
   const handleOkAdd = async () => {
-    const activeTab = form.getFieldValue("activeTab") || "1";
-    console.log("Active tab in handleOkAdd:", activeTab);
     if (activeTab === "1") {
       const dataFile = await handleFileUpload("add", fileListAdd);
       if (dataFile) setIsModalAddOpen(false);
@@ -548,18 +547,21 @@ const ListParcels = () => {
     setFileListUpdate([]);
   };
 
-  const showModalAdd = () => {
-    setIsModalAddOpen(true);
-    form.setFieldsValue({ activeTab: "1" });
-    form.resetFields();
-  };
-
   const handleCancelInspection = () => {
     setIsModalInspectionOpen(false);
     setFileListInspection([]);
   };
 
+  const showModalAdd = () => {
+    setActiveTab("1"); // Đặt activeTab về "1" khi mở modal
+    form.setFieldsValue({ activeTab: "1" });
+    form.resetFields(["trackingCode", "weight"]); // Reset các trường khác
+    setFileListAdd([]);
+    setIsModalAddOpen(true);
+  };
+
   const handleCancelAdd = () => {
+    setActiveTab("1"); // Đặt activeTab về "1" khi đóng modal
     setIsModalAddOpen(false);
     setFileListAdd([]);
     form.resetFields();
@@ -570,7 +572,6 @@ const ListParcels = () => {
     try {
       const values = await form.validateFields();
       const { trackingCode, weight } = values;
-
       try {
         await addParcel({ trackingCode, weight }).unwrap();
         message.success("Thêm mới kiện hàng thành công!");
@@ -810,9 +811,9 @@ const ListParcels = () => {
             layout="vertical"
           >
             <Tabs
-              defaultActiveKey="1"
+              activeKey={activeTab}
               onChange={(key) => {
-                console.log("Active tab changed to:", key);
+                setActiveTab(key);
                 form.setFieldsValue({ activeTab: key });
                 if (key === "2") {
                   setFileListAdd([]);
