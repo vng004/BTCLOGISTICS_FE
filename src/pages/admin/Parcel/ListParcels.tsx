@@ -455,6 +455,7 @@ const ListParcels = () => {
 
   const handleOkAdd = async () => {
     const activeTab = form.getFieldValue("activeTab") || "1";
+    console.log("Active tab in handleOkAdd:", activeTab);
     if (activeTab === "1") {
       const dataFile = await handleFileUpload("add", fileListAdd);
       if (dataFile) setIsModalAddOpen(false);
@@ -549,6 +550,8 @@ const ListParcels = () => {
 
   const showModalAdd = () => {
     setIsModalAddOpen(true);
+    form.setFieldsValue({ activeTab: "1" });
+    form.resetFields();
   };
 
   const handleCancelInspection = () => {
@@ -580,7 +583,7 @@ const ListParcels = () => {
       }
     } catch (error) {
       displayErrorMessage(error);
-
+      console.log(error);
       return false;
     }
   };
@@ -809,6 +812,7 @@ const ListParcels = () => {
             <Tabs
               defaultActiveKey="1"
               onChange={(key) => {
+                console.log("Active tab changed to:", key);
                 form.setFieldsValue({ activeTab: key });
                 if (key === "2") {
                   setFileListAdd([]);
