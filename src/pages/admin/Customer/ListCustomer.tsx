@@ -1,5 +1,6 @@
 import {
   Button,
+  Input,
   message,
   Modal,
   Pagination,
@@ -25,12 +26,20 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 
 const ListCustomer = () => {
-  const { data, isLoading } = useGetCustomerQuery({});
-  const [removeCustomer] = useRemoveCustomerMutation();
   const [page, setPage] = useState(1);
   const [perPage] = useState(6);
+  const [keyword, setKeyword] = useState("");
+
+  const { data, isLoading } = useGetCustomerQuery({
+    keyword,
+    page,
+    per_page: perPage,
+  });
+  const [removeCustomer] = useRemoveCustomerMutation();
+
   const { user } = useSelector((state: RootState) => state.auth);
   const admin = user?.role === "admin";
+
   const dataSource = data?.data.map((item: Customer, index: number) => ({
     key: (page - 1) * data?.meta?.perPage + index + 1,
     ...item,
@@ -174,13 +183,28 @@ const ListCustomer = () => {
     setPage(page);
     smoothScrollToTop();
   };
+
+  const handleSearchChange = (e: any) => {
+    const value = e.target.value;
+    setKeyword(value);
+    smoothScrollToTop();
+  };
   return (
     <div>
       <Helmet>
         <title>{getTitleTab("Quản lí kiện hàng")}</title>
       </Helmet>
-      <div className="flex justify-between items-center flex-col md:flex-row lg:flex-row mb-3 bg-white rounded-[50px] shadow-xl p-4">
-        <p className="text-xl">Danh sách khách hàng</p>
+      <div className="flex  justify-between items-center flex-col md:flex-row lg:flex-row mb-3 bg-white rounded-[50px] shadow-xl p-4">
+        <div className="flex flex-wrap items-center gap-x-6">
+          <p className="text-xl">Danh sách khách hàng</p>
+          <Input
+            placeholder="Lọc theo mã, tên khách hàng"
+            value={keyword}
+            onChange={handleSearchChange}
+            className="px-2 h-[44px] w-59 text-[16px]"
+            allowClear
+          />
+        </div>
         <div className="flex justify-between items-center gap-x-2 ">
           <Link
             to={`/admin/customer-add`}
@@ -210,7 +234,7 @@ const ListCustomer = () => {
                 current={page}
                 total={data?.meta?.total}
                 onChange={handlePageChange}
-                pageSize={data?.meta?.perPage}
+                pageSize={data?.meta?.per_page}
               />
             </div>
           </div>

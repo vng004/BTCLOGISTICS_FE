@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useGetOrderSuccesQuery } from "../../../redux/slices/orderSuccesApiSlice";
 import { formatPrice } from "../../../constants/util";
 
-const Dashbroad = () => {
+const Dashboard = () => {
   const currentStartOfMonth = moment().startOf("month").format("YYYY-MM-DD");
   const currentEndOfMonth = moment().endOf("month").format("YYYY-MM-DD");
 
@@ -169,4 +169,4 @@ const Dashbroad = () => {
   );
 };
 
-export default Dashbroad;
+export default Dashboard;

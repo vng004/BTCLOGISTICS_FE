@@ -30,15 +30,15 @@ import PrivacyPolicy from "./pages/client/SubItem/PrivacyPolicy";
 import OfficialShipping from "./pages/client/OfficialShipping/OfficialShipping";
 import OfficialGood from "./pages/admin/OfficialGood/OfficialGood";
 import DetailOfficialGood from "./pages/admin/OfficialGood/DetailOfficialGood";
-import Dashbroad from "./pages/admin/Dashboard/Dashbroad";
 import Register from "./pages/auth/Register";
+import Dashboard from "./pages/admin/Dashboard/Dashbroad";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/admin" element={<LayoutAdmin />}>
-          <Route index element={<Dashbroad />} />
+          <Route index element={<Dashboard />} />
 
           <Route path="/admin/parcel" element={<ListParcels />} />
           <Route path="/admin/parcel/:id" element={<DetailParcel />} />

@@ -43,6 +43,7 @@ const DetailParcel = () => {
     weight: string;
     description: string;
     packageCode: string;
+
   }) => {
     Modal.confirm({
       title: (
@@ -79,14 +80,15 @@ const DetailParcel = () => {
             return;
           }
           const { trackingCode, weight, description, packageCode } = values;
-          await updateParcel({
+          const data =  await updateParcel({
             id,
             trackingCode,
             weight,
             description,
             shipmentStatus,
             packageCode,
-          }).unwrap();
+          })
+          ;console.log(data)
           message.success("Cập nhật kiện hàng thành công!");
           nav("/admin/parcel");
         } catch (error: any) {

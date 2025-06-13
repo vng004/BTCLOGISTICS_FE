@@ -7,8 +7,18 @@ export const customerApiSlice = createApi({
   baseQuery: baseQuery,
   tagTypes: ["Customer"],
   endpoints: (builder) => ({
-    getCustomer: builder.query({
-      query: () => `/customer`,
+    getCustomer: builder.query<
+      any,
+      { page?: number; per_page?: number; keyword?: string }
+    >({
+      query: ({ page, per_page, keyword }) => ({
+        url: `/customer`,
+        params: {
+          keyword,
+          page,
+          per_page,
+        },
+      }),
       providesTags: ["Customer"],
     }),
     getCustomerById: builder.query<Customer, string | undefined>({
@@ -56,5 +66,5 @@ export const {
   useAddCustomerMutation,
   useUpdateCustomerMutation,
   useRemoveCustomerMutation,
-  useCheckCustomerCodeQuery
+  useCheckCustomerCodeQuery,
 } = customerApiSlice;

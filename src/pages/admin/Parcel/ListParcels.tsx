@@ -84,7 +84,10 @@ const ListParcels = () => {
   const [fileListInspection, setFileListInspection] = useState<any[]>([]);
   const [fileListAdd, setFileListAdd] = useState<any[]>([]);
   const [assignCustomerToParcel] = useAssignToParcelMutation();
-  const { data: customerData } = useGetCustomerQuery({});
+  const { data: customerData } = useGetCustomerQuery({
+    page: 1,
+    per_page: 200,
+  });
   const customers = customerData?.data || [];
   const [addParcelForOrderSucces, { isLoading: addOrder }] =
     useAddParcelsForOrderSuccesMutation();
